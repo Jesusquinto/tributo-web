@@ -135,7 +135,10 @@ public class SendMailService {
         
             FrUsuarioActo tramite = this.frUsuarioActoService.findById(idFrUsuarioActo);
             String key = UUID.randomUUID().toString() + "_" + nombre.replace(" ", "");
-            
+            System.out.println("el tooo");
+            System.out.println(to);
+
+
             tramite.setKeycode(key);
                 Calendar cal = Calendar.getInstance(); // creates calendar
                 cal.setTime(new Date()); // sets calendar time/date
@@ -197,7 +200,7 @@ public class SendMailService {
                                 "\n" +
                                 "\n" +
                                 "</body></html>",true);
-            
+            System.out.println("HASTA QUÍ FUNCIONA HPTAAAA");
             javaMailSender.send(message );
         }
     
