@@ -21,11 +21,6 @@ public class Tributo implements CommandLineRunner {
     private PasswordEncoder passwordEncoder;
     
     
-    
-    
-    
-    
-    
 
 
 	public static void main(String[] args) {

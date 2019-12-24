@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.tributo.cliente.service;
 
 import co.tributo.cliente.model.FrUsuario;
@@ -18,10 +13,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author jesus
- */
 @Service
 public class SendMailService {
     
@@ -135,10 +126,7 @@ public class SendMailService {
         
             FrUsuarioActo tramite = this.frUsuarioActoService.findById(idFrUsuarioActo);
             String key = UUID.randomUUID().toString() + "_" + nombre.replace(" ", "");
-            System.out.println("el tooo");
-            System.out.println(to);
-
-
+            
             tramite.setKeycode(key);
                 Calendar cal = Calendar.getInstance(); // creates calendar
                 cal.setTime(new Date()); // sets calendar time/date
@@ -200,7 +188,7 @@ public class SendMailService {
                                 "\n" +
                                 "\n" +
                                 "</body></html>",true);
-            System.out.println("HASTA QUÍ FUNCIONA HPTAAAA");
+            System.out.println("HASTA AQUÍ FUNCIONA");
             javaMailSender.send(message );
         }
     

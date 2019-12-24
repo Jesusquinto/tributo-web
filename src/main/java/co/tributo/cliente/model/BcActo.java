@@ -59,6 +59,11 @@ public class BcActo implements Serializable {
     @Size(min = 1, max = 4)
     @Column(name = "estado")
     private String estado;
+
+    @NotNull
+    @Size(min = 1, max = 64)
+    @Column(name = "tipo")
+    private String tipo;
     
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "fkBcActo")
@@ -111,6 +116,14 @@ public class BcActo implements Serializable {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     @XmlTransient

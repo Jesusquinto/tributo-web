@@ -382,6 +382,11 @@ public class FrUsuarioActo implements Serializable {
         this.correcion = correcion;
     }
 
+
+    public boolean getCorrecion(){
+        return this.correcion;
+    }
+
     /**
      * @return the keycode
      */

@@ -2,10 +2,10 @@
 
 spring: 
     datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        password: Tributo2019*GTS
-        url: jdbc:mysql://tributoaws.cflyqudqcoq8.us-east-2.rds.amazonaws.com:3306/tributo?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT-5:00
-        username: root
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        password: Admin123
+        url: jdbc:sqlserver://salud.cflyqudqcoq8.us-east-2.rds.amazonaws.com:1433;databaseName=tributo
+        username: sa
     jackson:
         locale: es_CO
         time-zone: America/Bogota
@@ -62,5 +62,9 @@ app:
             - myiosapp://oauth2/redirect
 server:
     port : 80
+
+entidadesserverurl: http://a.tributo.co/rest/v1/formatos/tramites/
+apiConvert2PDF: http://doc2pdf.gtsdev.co:5000/doc2pdf
+
 
 

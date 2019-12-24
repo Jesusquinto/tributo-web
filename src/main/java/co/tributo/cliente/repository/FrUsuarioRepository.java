@@ -22,7 +22,7 @@ public interface FrUsuarioRepository extends JpaRepository<FrUsuario, Integer>{
     FrUsuario getFrUsuarioByEmail(@Param("email") String email);
     
     @Modifying
-    @Query(value="DELETE FROM fr_usuario where verified_account=1 and EXTRACT(HOUR FROM TIMEDIFF(now(), expiration_code)) >= 24", nativeQuery = true)
+    @Query(value="DELETE FROM fr_usuario where verified_account=1 and datepart(HOUR FROM DATEDIFF(day,CURRENT_TIMESTAMP, expiration_code)) >= 24", nativeQuery = true)
     void checkVerifiedAccount();
     
     @Query("SELECT f FROM FrUsuario f WHERE f.verificaionCode = :verificaionCode")

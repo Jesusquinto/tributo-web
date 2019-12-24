@@ -24,7 +24,7 @@ public interface BcActoEntidadRepository extends JpaRepository<BcActoEntidad, In
     List<BcActoEntidad> findByIdEntidad(@Param("idEntidad") Integer idEntidad);
     
     
-    @Query("SELECT b FROM BcActoEntidad b WHERE (b.codigo = :codigo OR :codigo = '0') AND (b.fkBcActo.nombreActo LIKE CONCAT('%',:nombre,'%') OR :nombre = '0' ) AND b.fkBcEntidad.idEntidad = :idEntidad")
+    @Query("SELECT b FROM BcActoEntidad b WHERE (b.codigo LIKE CONCAT('%',:codigo,'%') OR :codigo = '0') AND (b.fkBcActo.nombreActo LIKE CONCAT('%',:nombre,'%') OR :nombre = '0' ) AND b.fkBcEntidad.idEntidad = :idEntidad")
     public List<BcActoEntidad> filterByVarios(@Param("codigo") String codigo, @Param("nombre") String nombre, @Param("idEntidad") Integer idEntidad);
 
     

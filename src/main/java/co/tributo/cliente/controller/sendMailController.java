@@ -55,6 +55,7 @@ public class sendMailController {
                     return new ResponseEntity<>(response, HttpStatus.ACCEPTED);  
                 }
            }
+        
           sendMailService.sendMail(userPrincipal.getEmail(), userPrincipal.getName(), idFrUsuarioActo);
           tramite = frUsuarioActoService.findById(idFrUsuarioActo);
        }catch(Exception e){

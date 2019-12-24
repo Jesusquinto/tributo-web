@@ -57,6 +57,11 @@ public class BcTributos implements Serializable {
     @Size(min = 1, max = 1)
     @Column(name = "estado")
     private String estado;
+
+    @NotNull
+    @Size(min = 1, max = 64)
+    @Column(name = "tipo")
+    private String tipo;
     
     @JsonIgnore
     @OneToMany( cascade = CascadeType.ALL, mappedBy = "idtributo")
@@ -89,6 +94,15 @@ public class BcTributos implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getEstado() {
