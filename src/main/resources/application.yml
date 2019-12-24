@@ -1,0 +1,68 @@
+spring: 
+    datasource:
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        password: Admin123
+        url: jdbc:sqlserver://salud.cflyqudqcoq8.us-east-2.rds.amazonaws.com:1433;databaseName=tributo
+        username: sa
+    jackson:
+        locale: es_CO
+        time-zone: America/Bogota
+   
+    servlet:
+        multipart:
+            max-file-size: 1000MB
+            max-request-size: 1000MB   
+    
+    
+    mail:
+        default-encoding: UTF-8
+        host: smtp.gmail.com
+        username: noreply.tributo@gmail.com
+        password: noreply123456789
+        port: 587
+        properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
+        protocol: smtp
+        test-connection: false
+        
+  
+    
+   
+    security:
+      oauth2:
+        client:
+          registration:
+            google:
+              clientId: 562395250791-a3k2v884gmudn0tvug80dqq738kqem22.apps.googleusercontent.com
+              clientSecret: rnjZd-kQm5H8oNEkedTzMAEK
+              redirectUriTemplate: "{baseUrl}/oauth2/callback/{registrationId}"
+              scope:
+                - email
+                - profile
+app:
+        auth:
+          tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+          tokenExpirationMsec: 864000000
+        oauth2:
+          # After successfully authenticating with the OAuth2 Provider,
+          # we'll be generating an auth token for the user and sending the token to the
+          # redirectUri mentioned by the frontend client in the /oauth2/authorize request.
+          # We're not using cookies because they won't work well in mobile clients.
+          authorizedRedirectUris:
+            - http://www.tributo.co/
+            - http://localhost:4200/
+            - http://localhost/
+            - myandroidapp://oauth2/redirect
+            - myiosapp://oauth2/redirect
+server:
+    port : 80
+
+entidadesserverurl: http://a.tributo.co/rest/v1/formatos/tramites/
+apiConvert2PDF: http://doc2pdf.gtsdev.co:5000/doc2pdf
+
+
+
